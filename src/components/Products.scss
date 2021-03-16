@@ -1,0 +1,11 @@
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
+  text-align: center;
+  
+}
+.robo {
+  height: 200px;
+  width: 200px;
+}

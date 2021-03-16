@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react';
+
+import Nav from './components/Nav';
+import Slider from './components/Slider';
+import Products from './components/Products';
+
 
 function App() {
+
+  const [query, setQuery] = useState('')
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <div className = 'search-container' >
+        <input className = 'search' type="text" value = {query} placeholder='Search...'
+         onChange = {(e) => setQuery(e.target.value)} />
+      </div>
+      <Slider />
+      <Products query = {query} />
     </div>
   );
 }
